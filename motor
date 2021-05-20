@@ -1,0 +1,54 @@
+from gpiozero import Motor, OutputDevice
+import time
+import cv2
+
+
+time.sleep(0.1)
+motorL = Motor(10,6)
+motorR = Motor(25, 8)
+
+motorEnableL = OutputDevice(21)
+motorEnableR = OutputDevice(13)
+
+motorEnableL.on()
+motorEnableR.on()
+def servoMid():
+    servoCamara.mid()
+    time.sleep(0.1)
+def MotorForward():
+    motorL.forward(0.45)
+    motorR.forward(0.45)
+    #time.sleep(3)
+def giroDer():
+    #derecha-frente
+    motorL.forward(0.80)
+    motorR.forward(0.20)
+    time.sleep(3)
+
+def giroIzq():
+    #reversa-frente
+    motorL.backward(0.20)
+    motorR.backward(1)
+    time.sleep(3)
+
+def MotorDer():
+    #derecha
+    motorL.forward(0.70)
+    motorR.backward(0.70)
+    #time.sleep(3)
+#izquierda
+def MotorIzq():
+    motorL.backward(0.70)
+    motorR.forward(0.70)
+    #time.sleep(3)
+def MotorReversa():
+    #reversa
+    motorL.backward(0.3)
+    motorR.backward(0.3)
+    #time.sleep(3)
+def MotorStop():
+    motorL.forward(0)
+    motorR.forward(0)
+def servoMax():
+    servoCamara.max()
+    time.sleep(0.3)
